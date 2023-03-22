@@ -9,9 +9,9 @@ import java.util.stream.Collectors;
 
 @Service
 public class CarServiceImpl implements CarService {
-    private static List<Car> carList;
+    private  List<Car> carList;
 
-    static {
+     {
         carList = new ArrayList<>();
         carList.add(new Car(1L, "lada1", 1992));
         carList.add(new Car(2L, "lada2", 1992));
@@ -38,7 +38,7 @@ public class CarServiceImpl implements CarService {
     }
 
     public CarServiceImpl(List<Car> carList) {
-        CarServiceImpl.carList = carList;
+        this.carList = carList;
     }
 
     public List<Car> getCarList() {
@@ -46,6 +46,6 @@ public class CarServiceImpl implements CarService {
     }
 
     public void setCarList(List<Car> carList) {
-        CarServiceImpl.carList = carList;
+        this.carList = carList;
     }
 }
